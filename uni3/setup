@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo cp i3-uni3.desktop	/usr/share/xsessions/
+sudo cp i3-uni3.desktop	/usr/share/xsessions/

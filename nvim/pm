@@ -1,0 +1,6 @@
+#!usr/bin/env bash
+
+plugin_link="$1"
+
+git clone $1 \
+  ~/.config/nvim/pack/vendor/start/mini.nvim
