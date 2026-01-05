@@ -1,0 +1,7 @@
+https://github.com/nvim-mini/mini.nvim.git
+https://github.com/rust-lang/rust.vim.git
+https://github.com/nvim-telescope/telescope.nvim.git
+https://github.com/nvim-neo-tree/neo-tree.nvim.git
+https://github.com/nvim-tree/nvim-web-devicons.git
+https://github.com/nvim-lua/plenary.nvim.git
+https://github.com/junegunn/goyo.vim.git

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+plugin_path="$PWD/pack/plugins/start"
+[[ -d "$plugin_path" ]] || mkdir -p "$plugin_path"
+cd $plugin_path
+
+while read plugin_link
+do
+	git clone $plugin_link
+done<../../../plugins.txt
