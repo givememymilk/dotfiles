@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -e 
-
-PATH="/usr/local/bin:/usr/bin:$HOME/.local/bin"
-xwallpaper --zoom $HOME/.config/wlp.jpg
-exec i3 -c $HOME/.config/uni3/i3.conf
