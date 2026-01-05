@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd config
+
+for config_unit in *
+do
+    ln -s ~/.config/$config_unit ./$config_unit 
+done
