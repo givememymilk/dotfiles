@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd config
+for unit in *
+do
+    ln -s "$PWD"/"$unit" "$HOME"/.config
+done

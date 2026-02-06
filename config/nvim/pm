@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 
-plugin_path="$PWD/pack/plugins/start"
-[[ -d "$plugin_path" ]] || mkdir -p "$plugin_path"
-cd $plugin_path
+NVIM_DIR=$HOME/.config/nvim/
 
-while read plugin_link
-do
+install()
+{
+
+    plugin_path="$NVIM_DIR/pack/plugins/start"
+    echo "$plugin_path"
+    [[ -d "$plugin_path" ]] || mkdir -p "$plugin_path"
+    cd "$plugin_path"
+
+    while read plugin_link
+    do
 	git clone $plugin_link
-done<../../../plugins.txt
+    done < ../../../plugins.txt
+}
+
+update()
+{
+    cd "$plugin_path"
+    for f in "$plugin_path"/*
+    do
+	cd "$f"
+	git pull
+    done 
+}
