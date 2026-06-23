@@ -1,0 +1,13 @@
+# vim: ft=sh
+
+# Miscallenous XDG stuff that I don't actively need
+
+export PYTHON_HISTORY="$XDG_STATE_HOME"/python_history
+export HISTFILE="$XDG_STATE_HOME"/bash_hist
+export GEMINI_CLI_HOME="$XDG_CONFIG_HOME"/gemini
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+export DBUS_SESSION_BUS_ADDRESS=$XDG_RUNTIME_DIR/dbus-sess

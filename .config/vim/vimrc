@@ -1,0 +1,34 @@
+vim9script
+
+ru xdg.vim
+
+# make vim color not affected by terminal color
+set termguicolors
+set t_Co=256
+
+set nocompatible
+set number
+
+set tabstop=2
+
+syntax on 
+
+au BufNewFile,BufRead * {
+	var test: string = system('date +%H')
+	if test <= '18'
+		colo morning
+	else
+		colo evening
+	endif
+}
+au BufNewFile * :write
+
+au BufRead *.{md,txt} set textwidth=80
+au BufRead *.py {
+	setlocal smarttab
+
+	setlocal tabstop=4
+	setlocal shiftwidth=4
+	setlocal textwidth=79
+}
+
