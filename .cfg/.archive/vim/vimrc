@@ -1,0 +1,51 @@
+vim9script
+
+runtime xdg.vim
+
+g:mapleader = ","
+
+map <Leader>d :Explore<cr>
+
+# make vim color not affected by terminal color
+set termguicolors
+set t_Co=256
+
+set bg=dark
+
+set nocompatible
+set number
+
+colo lunaperche
+set bg=dark
+
+set expandtab # turn <tab> keys into spaces
+
+set shiftwidth=4
+set smartindent
+set smarttab
+
+syntax enable 
+
+au BufReadPre *.{md,txt} {
+    set textwidth=0
+}
+
+au BufReadPre Makefile {
+    setlocal tabstop=8
+    setlocal shiftwidth=8
+
+    setlocal noexpandtab
+}
+
+au BufReadPre *.py {
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+    setlocal textwidth=79
+}
+
+au BufReadPre *.go {
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+
+    setlocal noexpandtab
+}

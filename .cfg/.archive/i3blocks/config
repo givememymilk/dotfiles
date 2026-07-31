@@ -1,0 +1,14 @@
+# vim: ft=toml
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[battery]
+color=#f5af19
+command=echo "BAT: $(cat /sys/class/power_supply/BAT0/capacity)%"
+interval=5
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1

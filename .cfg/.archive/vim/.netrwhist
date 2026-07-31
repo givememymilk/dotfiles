@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/v1/.config'
+let g:netrw_dirhist_6='/home/v1/prj/vgo/src'
+let g:netrw_dirhist_5='/home/v1/prj/website/theme/static/css'
+let g:netrw_dirhist_4='/home/v1/prj/website/theme/static'
+let g:netrw_dirhist_3='/home/v1/prj/website/theme'
+let g:netrw_dirhist_2='/home/v1/prj/website/theme/templates'
+let g:netrw_dirhist_1='/home/v1/.config/vim'

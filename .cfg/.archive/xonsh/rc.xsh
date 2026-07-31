@@ -1,0 +1,4 @@
+# XONSH WEBCONFIG START
+$PROMPT = '{BOLD_BLUE}{cwd}{RESET}> '
+xontrib load coreutils
+# XONSH WEBCONFIG END
