@@ -1,0 +1,38 @@
+# vim: ft=sh
+[ $TERM != linux ] && is_tty=true
+[ $TERM = 'alacritty' ] && exec tmux
+
+export EDITOR=vim
+export PAGER=less
+
+CR=$(printf '\033[1;31m') # Red
+CG=$(printf '\033[1;32m') # Green
+CO=$(printf '\033[0m')    # Reset
+export PS1='$CG$PWD |> $CO'
+
+append_path()
+{
+    case ":$PATH:" in
+        *:"$1":*) ;;
+        *) PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
+prepend_path()
+{    
+    case ":$PATH:" in
+        *:"$1":*) ;;
+        *) PATH="$1${PATH:+$PATH:}"
+    esac
+
+}
+
+
+append_path "$HOME"/".local"/bin
+append_path "$HOME"/.bin
+append_path "$HOME"/'.local'/bin/scripts
+
+alias ls='ls --color --group-directories-first'
+alias ed="$EDITOR"
+alias p="$PAGER"
+
