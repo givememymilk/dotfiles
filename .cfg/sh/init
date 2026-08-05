@@ -1,14 +1,14 @@
 # vim: ft=sh
-[ $TERM != linux ] && is_tty=true
+[ $TERM = linux ] && is_tty=true
 [ $TERM = 'alacritty' ] && exec tmux
 
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 
 CR=$(printf '\033[1;31m') # Red
 CG=$(printf '\033[1;32m') # Green
 CO=$(printf '\033[0m')    # Reset
-export PS1='$CG$PWD |> $CO'
+export PS1='$CG$(echo $PWD | sed "s#$HOME#~#")> $CO'
 
 append_path()
 {
