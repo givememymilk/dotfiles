@@ -1,52 +1,40 @@
-#!/bin/sh
+# shellcheck shell=sh
+# shellcheck disable=SC1090
+# shellcheck disable=SC2155
 
-#set -euo pipefail
-#trap '' INT
+export XDG_CONFIG_HOME="$HOME/.cfg"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.local/cache"
 
-ConfDir="$HOME"/.config/profile.d/
+# variables for interactive shells
+export ENV="$XDG_CONFIG_HOME/sh/init"
+export SHCFG="$(dirname "$ENV")"
 
-get_shName()
-{
-  ps -p $$ | awk '$1 != "PID" {print $(NF)}'
-}
+# var for xorg init
+export XINITRC="$XDG_CONFIG_HOME/xorg/xinitrc"
 
-ShName="${get_shName}"
+# DO NOT CHANGE THESE TWO LINE
+# OR IF YOU HAVE TO, HANDLE WITH CARE
+"$SHCFG/xdg_cleanup"
+. "$SHCFG/xdg_cleanup"
 
-inst_pkg()
-{
-  detect_os()
-  {
-    ID="$(grep '^ID' /etc/os-release \
-      | cut -d'=' -f 2)"
+if test -f "$1"
+then
+	. "$ENV"
+fi
 
-    case "$ID" in
-      "ubuntu" | "debian" | "mint")
-        os_type="debian-based";;
-      "arch" | "artix")
-        os_type="arch-based";;
-    esac
-  }
+alias CMDV='command -v'
 
-  Detect_os
-  case "$os_type" in
-    "debian-based")
-      echo 'TODO';;
-    "arch-based")
-      sudo pacman -S \
-        xorg-server xorg-xinit \
-        i3-wm i3blocks \
-        helix emacs \
-        clang shellcheck-bin \
-        man-db man-pages \
-        eza bat zoxide fd fzf starship\
-	      alsa-utils \
-        wezterm
-      ;;
-  esac
-}
+if CMDV dinit
+then
+	dinit &
+fi
 
-case $- in
-  *i*) source "$HOME"/.config/profile.d/rc
-esac
+if CMDV amixer
+then
+	amixer sset Master unmute
+	amixer sset Speaker unmute
+	amixer sset Headphone unmute
+fi
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
