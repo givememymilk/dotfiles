@@ -1,9 +1,10 @@
 #!/bin/sh
 
 xwallpaper --zoom ~/img/wallpaper.jpg
-picom -b "$XDG_CONFIG_HOME"/xorg/picom.conf
 
-fcitx5 &
+picom -b "$XDG_CONFIG_HOME"/xorg/picom.conf
+ibus-daemon -dxr
+
 blueman-applet &
 
 exec dbus-run-session -- i3 -c "$XDG_CONFIG_HOME"/xorg/i3/main.conf
