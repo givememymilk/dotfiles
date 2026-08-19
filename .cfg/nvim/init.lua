@@ -15,3 +15,4 @@ vim.cmd("colo lunaperche")
 local o = vim.opt
 
 o.number = true
+o.tabstop = 4
