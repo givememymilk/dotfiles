@@ -7,6 +7,10 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.local/cache"
 
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
 # variables for interactive shells
 export ENV="$XDG_CONFIG_HOME/sh/init"
 export SHCFG="$(dirname "$ENV")"
@@ -37,4 +41,3 @@ then
 	amixer sset Speaker unmute
 	amixer sset Headphone unmute
 fi
-

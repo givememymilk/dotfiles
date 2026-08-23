@@ -1,0 +1,25 @@
+# pointer arithmetic in C/C++
+---
+
+yes, it exists, and it's as cursed as it sounds, but trust me, it will make
+sense once you understand the why behind it
+
+But to understand it, we have to get a few things out of the way
+
+# Everything is memory in C
+---
+
+This might be an over-simplification, but internally, structs, arrays, char,
+etc... all of them are representation over a byte array (i.e memory)
+
+And yes, arrays too - array in C is, interally, just pointer to contiguous
+byte array
+
+and since it's a pointer, this is where things get interesting
+
+# the two ways to manipulate an array
+---
+
+Now, we all know the `array[idx]` construct in C, but... since arrays are just
+an array of values of a certain types, which itself is just an array of bytes,
+you can do pointer arithmetic to "point" to a different index in an array
