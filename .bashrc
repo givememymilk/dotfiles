@@ -1,0 +1,1 @@
+/home/v1/.cfg/sh/init
